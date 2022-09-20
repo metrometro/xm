@@ -1,0 +1,12 @@
+com\epam\service\dto\modeldto\NormalizedCryptoDto.class
+com\epam\service\exception\ServiceException.class
+com\epam\service\handler\FileHandler.class
+com\epam\service\servicedto\impl\NormalizedCryptoServiceImpl.class
+com\epam\service\servicedto\ServiceDto.class
+com\epam\service\configuration\ServiceConfiguration.class
+com\epam\service\util\CryptoTypeUtil.class
+com\epam\service\dto\mapper\CryptoMapper.class
+com\epam\service\servicedto\impl\CryptoServiceImpl.class
+com\epam\service\dto\modeldto\CryptoDto.class
+com\epam\service\util\MonthUtil.class
+com\epam\service\dto\mapper\NormalizedCryptoMapper.class

@@ -1,0 +1,5 @@
+com\epam\repository\jparepository\NormalizedCryptoEntityRepository.class
+com\epam\repository\type\CryptoType.class
+com\epam\repository\model\Crypto.class
+com\epam\repository\model\NormalizedCrypto.class
+com\epam\repository\jparepository\CryptoEntityRepository.class

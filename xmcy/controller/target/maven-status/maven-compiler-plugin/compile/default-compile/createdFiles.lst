@@ -1,0 +1,5 @@
+com\epam\controller\app\Application.class
+com\epam\controller\NormalizedCryptoController.class
+com\epam\controller\configuration\ControllerConfiguration.class
+com\epam\controller\CryptoController.class
+com\epam\controller\exceptionhandler\Advice.class
