@@ -9,7 +9,7 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table(name = "test")
+@Table(name = "crypto")
 public class Crypto {
 
     @Id

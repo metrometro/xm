@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "test2")
+@Table(name = "normalized")
 public class NormalizedCrypto {
 
     @Id
