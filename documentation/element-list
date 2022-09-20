@@ -1,0 +1,16 @@
+com.epam.controller
+com.epam.controller.app
+com.epam.controller.configuration
+com.epam.controller.exceptionhandler
+com.epam.controller.filter
+com.epam.repository.jparepository
+com.epam.repository.model
+com.epam.repository.type
+com.epam.service.configuration
+com.epam.service.dto.mapper
+com.epam.service.dto.modeldto
+com.epam.service.exception
+com.epam.service.handler
+com.epam.service.servicedto
+com.epam.service.servicedto.impl
+com.epam.service.util

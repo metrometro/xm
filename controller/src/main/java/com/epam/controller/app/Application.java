@@ -1,3 +1,9 @@
+/**
+ *Class annotated as SpringBootApplication with main() method
+ *to start Spring-boot application
+ * @author Ryhor Pishchyk
+ * */
+
 package com.epam.controller.app;
 
 import org.springframework.boot.SpringApplication;

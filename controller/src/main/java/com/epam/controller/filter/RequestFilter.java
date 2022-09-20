@@ -1,6 +1,10 @@
+/**
+ * Class to control number of requests per second from one user
+ * @author Ryhor Pishchyk
+ * */
+
 package com.epam.controller.filter;
 
-import com.github.benmanes.caffeine.cache.CacheLoader;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import org.springframework.http.HttpStatus;
@@ -15,10 +19,15 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RequestFilter implements Filter {
 
+    /*Field number of requests per second*/
     private static final int MAX_REQUESTS_PER_SECOND = 0;
 
+    /**Field number of requests*/
     private final LoadingCache<String, Integer> requestCountsPerIpAddress;
 
+    /**
+     * Constructor for creating object
+     * */
     public RequestFilter() {
         super();
         requestCountsPerIpAddress = Caffeine.newBuilder()
@@ -35,7 +44,7 @@ public class RequestFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         String clientIpAddress = getClientIP((HttpServletRequest) servletRequest);
-        if(isMaximumRequestsPerSecondExceeded(clientIpAddress)){
+        if (isMaximumRequestsPerSecondExceeded(clientIpAddress)){
             httpServletResponse.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
             httpServletResponse.getWriter().write("Too many requests");
             return;
@@ -43,6 +52,10 @@ public class RequestFilter implements Filter {
         filterChain.doFilter(request, servletResponse);
     }
 
+    /**
+     * Method to check number of maximum requests
+     * @param clientIpAddress - current IP of user
+     * */
     private boolean isMaximumRequestsPerSecondExceeded(String clientIpAddress){
         Integer requests = requestCountsPerIpAddress.get(clientIpAddress);
         if(requests != null){
@@ -60,6 +73,11 @@ public class RequestFilter implements Filter {
         return false;
     }
 
+    /**
+     * Getting user IP
+     * @param request - HttpServletRequest
+     * @return client IP
+     * */
     public String getClientIP(HttpServletRequest request) {
         String xfHeader = request.getHeader("X-Forwarded-For");
         if (xfHeader == null){

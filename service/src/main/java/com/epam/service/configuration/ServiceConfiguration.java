@@ -1,3 +1,8 @@
+/**
+ * Service configuration class
+ * @author Ryhor Pishchyk
+ * */
+
 package com.epam.service.configuration;
 
 import org.modelmapper.ModelMapper;
@@ -12,6 +17,10 @@ import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 @ComponentScan({"com.epam.service", "com.epam.repository.jparepository"})
 public class ServiceConfiguration {
 
+    /**
+     * Modelmapper configuration method
+     * @return ModelMapper bean
+     * */
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();

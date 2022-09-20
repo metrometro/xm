@@ -1,3 +1,8 @@
+/**
+ * Exception handler class
+ * @author Ryhor Pishchyk
+ * */
+
 package com.epam.controller.exceptionhandler;
 
 import com.epam.service.exception.ServiceException;
@@ -12,6 +17,11 @@ import java.util.List;
 @ControllerAdvice
 public class Advice {
 
+    /**
+    * Method that handle ServiceException type
+    * @param e - exception status
+    * @return ResponseEntity
+    * */
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<Object> handleException(ServiceException e) {
         List<String> list = new ArrayList<>();

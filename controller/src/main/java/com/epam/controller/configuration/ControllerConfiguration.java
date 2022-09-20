@@ -1,3 +1,8 @@
+/**
+ * Configuration class for Spring-boot
+ * @author Ryhor Pishchyk*
+ * */
+
 package com.epam.controller.configuration;
 
 import org.springframework.context.annotation.Bean;
@@ -15,6 +20,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 @ComponentScan({"com.epam.controller", "com.epam.service"})
 public class ControllerConfiguration {
 
+    /**
+    * Swagger configuration for documentation REST API
+    * @return Docket object
+    * */
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -25,6 +34,9 @@ public class ControllerConfiguration {
                 .build();
     }
 
+    /**
+    * Main information about swagger API
+    * */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title ("Spring Boot with Swagger2 to create RESTful API")

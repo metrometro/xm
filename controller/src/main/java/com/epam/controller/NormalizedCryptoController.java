@@ -1,3 +1,8 @@
+/**
+ * Class controller for finding normalized information by request
+ * @author Ryhor Pishchyk
+ * */
+
 package com.epam.controller;
 
 import com.epam.service.dto.modeldto.NormalizedCryptoDto;
@@ -31,6 +36,11 @@ public class NormalizedCryptoController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "month", value = "month", required = true)
     })
+    /**
+     * Endpoint to get descending sorted list of all the cryptos, comparing the normalized range GET:normalized/byMonth (paramkey = month)
+     * @param mont - needed mont
+     * @see NormalizedCryptoServiceImpl#findNormalizedByMonth(String)
+     * */
     @GetMapping(value = "/byMonth")
     public ResponseEntity<List<NormalizedCryptoDto>> findNormalizedByMonth(@RequestParam(name = "month") String month) {
         return ResponseEntity.ok(normalizedCryptoService.findNormalizedByMonth(month));
@@ -41,6 +51,12 @@ public class NormalizedCryptoController {
             @ApiImplicitParam(name = "month", value = "month", required = true),
             @ApiImplicitParam(name = "day", value = "day", required = true)
     })
+    /**
+     * Endpoint to get crypto with the highest normalized range for a specific day GET:byMonthAndDay/byMonth (paramkey = month, paramkey = day)
+     * @param mont - needed mont
+     * @param day - needed day
+     * @see NormalizedCryptoServiceImpl#findNormalizedByMonthDay(String, Integer)
+     * */
     @GetMapping(value = "/byMonthAndDay")
     public ResponseEntity<Object> findNormalizedByMonthAndDay(@RequestParam(name = "month") String month,
                                        @RequestParam(name = "day") Integer day) {
